@@ -1,15 +1,24 @@
 import { useEffect } from "react"
 import requester from "../../api/requester"
 import * as request from '../../api/requester'
+import * as gamesAPI from '../../api/games-api'
 
 export default function Catalog(){
+    const [games.setGames]=useState ([])
+    
     useEffect(()=> {
-       ( async() =>{
+
+        gamesAPI.getAll()
+            .then(result=>setGames(result))
+       //( async() =>{
+
              //const gamesResults = await requester('GET','http://localhost:3030/jsonstore/games')
-             const gamesResults = await request.('http://localhost:3030/jsonstore/games')
-             console.log(gamesResult)
-        })()
-    })
+             //const gamesResults = await request.get('http://localhost:3030/jsonstore/games')
+             //console.log(gamesResult)
+
+
+        //})()
+    },[])
     
     
     
