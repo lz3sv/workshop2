@@ -1,10 +1,10 @@
 import {Routes, Route} from 'react-router-dom'
 import Header from './components/header/Header'
-import Home from './home/Home'
-import Login from './login/Login'
-import Register from './register/Register'
-import Catalog from './catalog/Catalog'
-import Create from './create/Create'
+import Home from './components/home/Home'
+import Login from './components/login/Login'
+import Register from './components/register/Register'
+import Catalog from './components/catalog/Catalog'
+import Create from './components/create/Create'
 
 
 
