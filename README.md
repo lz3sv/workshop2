@@ -9,6 +9,7 @@ Softuni React Course
     - [x] Добавяне на ресурсите от заданието;
     - [x] Сепариране на HTML до компоненти;
 ## 2. Създаване на React Router
-    - [ ] инсталираме react-router-dom
-    - [ ] Setup react-router-dom
+    - [x] инсталираме react-router-dom; npm i react-router-dom
+    - [x] Setup react-router-dom        BrowserRouter in main!!!
     - [ ] добавяме Routes в App.jsx
+    - [ ] добавяме линковете в навигацията
