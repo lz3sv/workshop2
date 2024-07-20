@@ -1,6 +1,10 @@
 import {Routes, Route} from 'react-router-dom'
-import Header from './components/header/header'
-import Home from './home/home'
+import Header from './components/header/Header'
+import Home from './home/Home'
+import Login from './login/Login'
+import Register from './register/Register'
+import Catalog from './catalog/Catalog'
+import Create from './create/Create'
 
 
 
@@ -16,6 +20,10 @@ function App() {
       <main id="main-content">
         <Routes>
           <Route path= '/' element={<Home/>}/>
+          <Route path= '/login' element={<Login/>}/>
+          <Route path= '/register' element={<Register/>}/>
+          <Route path= '/catalog' element={<Catalog/>}/>
+          <Route path= '/create' element={<Create/>}/>
         </Routes>
       </main>
     </div>
