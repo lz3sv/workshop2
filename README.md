@@ -12,4 +12,8 @@ Softuni React Course
     - [x] инсталираме react-router-dom; npm i react-router-dom
     - [x] Setup react-router-dom        BrowserRouter in main!!!
     - [x] добавяме Routes в App.jsx
-    - [ ] добавяме линковете в навигацията
+    - [x] добавяме линковете в навигацията
+## 3. Свързваме страницата със сървъра
+    - [x] Създаване на архитектура на заявките
+    - [] Създаване на requester
+    - [] 
