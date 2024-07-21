@@ -13,17 +13,23 @@ export default function Details(){
     useEffect(()=>{
         (async ()=>{
             const result= await gamesAPI.getOne(gameId)
-            //console.log(result)
+            console.log(game.comments)
             setGame(result)
         })()
     },[])
 
     const commentSubmitHandler= async (e) => {
         e.preventDefault()
-        console.log ('Data sublitted')
-        console.log(userName)
-        console.log(comment)
-        await commentsApi.create(gameId, userName, comment)
+        const newComment = await commentsApi.create(gameId, userName, comment)
+        setGame(prevState => ({
+            ...prevState,
+            comments:{
+                ...prevState.comments,
+                [newComment._id]: newComment,
+            }
+        }))
+        setUserName('')
+        setComment('')
     }
     return (
         <section id="game-details">
@@ -45,16 +51,19 @@ export default function Details(){
             <div className="details-comments">
                 <h2>Comments:</h2>
                 <ul>
+                    {Object.keys(game.comments || {}).length>0
+                        ?   Object.values(game.comments).map(comment=> (
+                            <li key={comment._id} className="comment">
+                                <p>{comment.username}: {comment.text}</p>
+                            </li>
+                            ))
+                        : <p className="no-comment">No comments.</p>
+                    }
                     {/* <!-- list all comments for current game (If any) --> */}
-                    <li className="comment">
-                        <p>Content: I rate this one quite highly.</p>
-                    </li>
-                    <li className="comment">
-                        <p>Content: The best game.</p>
-                    </li>
+
                 </ul>
                 {/* <!-- Display paragraph: If there are no games in the database --> */}
-                <p className="no-comment">No comments.</p>
+               
             </div>
 
             {/* <!-- Edit/Delete buttons ( Only for creator of this game )  --> */}
