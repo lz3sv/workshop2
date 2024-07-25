@@ -19,4 +19,18 @@ Softuni React Course
     - [x] Създаване на игрите на сървъра
     - [x] Създаване на базовите страници catalog, datails, home
     - [x] Запис на коментари
-    - [ ] Четене на коментари
+    - [x] Четене на коментари
+## 4. Hooks
+    - [x] Game API Hooks
+    - [] Comment Hooks
+    - [] Form Hook
+## 5. Автентиакция
+    - [] Auth API
+    - [] Auth API Hook
+    - [] Auth State & context
+    - [] Login
+    - [] Register
+    - [] Logout
+## 6. Динамични страници
+    - [] Navigation
+    - [] Create Game

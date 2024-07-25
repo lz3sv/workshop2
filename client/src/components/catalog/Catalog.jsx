@@ -1,22 +1,10 @@
-import { useEffect, useState } from "react"
 
-import * as gamesAPI from '../../api/games-api'
+import { useGetAllGames } from "../../hooks/useGames"
 import GameListItem from "./game-list-item"
 
 export default function Catalog(){
-    const [games,setGames]=useState ([])
-    
-    useEffect(()=> {
 
-        gamesAPI.getAll()
-            .then(result=>setGames(result))
-       //( async() =>{
-             //const gamesResults = await requester('GET','http://localhost:3030/jsonstore/games')
-             //const gamesResults = await request.get('http://localhost:3030/jsonstore/games')
-             //console.log(gamesResult)
-        //})()
-    },[])
-    
+    const [games]=useGetAllGames()
     
     
     return (
