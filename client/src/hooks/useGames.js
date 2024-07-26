@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import gamesAPI from "../api/games-api"
 
 
+
 export function useGetAllGames(){
     const [games,setGames]=useState ([])
     
@@ -17,4 +18,22 @@ export function useGetAllGames(){
     },[])
 
     return [games, setGames]
+}
+
+export function useGetOneGames(gameId){
+const [game, setGame]=useState({})
+
+    useEffect(()=>{
+        (async ()=>{
+            const result= await gamesAPI.getOne(gameId)
+            console.log(game.comments)
+            setGame(result)
+        })()
+    },[gameId])
+
+    return [
+        game, 
+        setGame,
+    ]
+
 }

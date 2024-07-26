@@ -8,15 +8,18 @@ const create = async (gameId, username,text)=> await requester.post(buildUrl(gam
 
 
 
-// const getAll=async (gameId)=> {
-//     const result= await requester.get(buildUrl(gameId))
-//     const comments=Object.values(result)
+ const getAll=async (gameId)=> {
+     const result= await requester.get(buildUrl(gameId))
+     const comments=Object.values(result)
 
-//     return comments
+     return comments
 
-// }
+ }
 
-export default {
+ const commentsAPI ={
     create,
-    //getAll
+    getAll,
+    
 }
+
+export default commentsAPI
