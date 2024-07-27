@@ -12,14 +12,15 @@ const initialValues={
 export default function Create(){
     const navigate=useNavigate()
     const createGame=useCreateGame()
+
     const createHandler=async (values)=>{
-        //console.log(values)
-        
         try{
-            const {_id: gameId}= await createGame(values)
-            navigate(`/games/${gameId}/details`)
+            const result= await createGame(values)
+            console.log(result)
+            //navigate(`/games/${gameId}/details`)
         }catch(err){
             //set error state and display error
+            console.log('Error!!')
             console.log(err.mesage)
         }
 

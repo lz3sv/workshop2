@@ -1642,7 +1642,33 @@
     			_createdOn: 1616237272948,
     			_updatedOn: 1616237293676
     		}
-    	}
+    	},
+        games:{
+            "e53063d3-c585-4be7-a248-ec51ba1f54f1": {
+                title: "Satisfactory ",
+                category: "Epic",
+                maxLevel: "10",
+                imageUrl: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/526870/header.jpg?t=1718088881",
+                summary: "Satisfactory is a first-person open-world factory building game with a dash of exploration and combat. Play alone or with friends, explore an alien planet, create multi-story factories, and enter conveyor belt heaven!",
+                _id: "e53063d3-c585-4be7-a248-ec51ba1f54f1"
+            },
+            "7cee12ce-47d2-499a-8890-eab6a9f5bb04": {
+                title: "Eve online ",
+                category: "Action",
+                maxLevel: "10",
+                imageUrl: "https://www.thegamecrater.com/wp-content/uploads/2021/08/eve-770x433.jpg.webp",
+                summary: "EVE Online is a free-to-play Space MMORPG developed by CCP Games. The game is characterized by vast space exploration, PVP and PVE battles, and a dedicated player base. Thanks to an ever-expanding sandbox, EVE leaves a lot of room for players to chart their own course. This appeal contributes to a thriving in-game economy where players often spend significant amounts of real currency to optimize their gameplay. Moreover, EVE Online also explores a broad brush of themes such as war, politics, piracy, trading, and exploration. These factors contributed to EVE Online’s massive success over the last 18 years.",
+                _id: "7cee12ce-47d2-499a-8890-eab6a9f5bb04"
+            },
+            "70f09197-0b6c-43dd-925f-da67106f41c5": {
+                title: "World of Warcraft",
+                category: "Action",
+                maxLevel: "5",
+                imageUrl: "https://upload.wikimedia.org/wikipedia/en/6/65/World_of_Warcraft.png",
+                summary: "Prepare to descend beneath the surface of Azeroth to explore subterranean worlds full of hidden wonders, earn the trust of the new Earthen allied race, and face an ancient evil lurking in the darkness.",
+                _id: "70f09197-0b6c-43dd-925f-da67106f41c5"
+            }
+        }
     };
     var rules$1 = {
     	users: {
