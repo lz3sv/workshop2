@@ -26,7 +26,7 @@ const [game, setGame]=useState({})
     useEffect(()=>{
         (async ()=>{
             const result= await gamesAPI.getOne(gameId)
-            console.log(game.comments)
+            //console.log(game.comments)
             setGame(result)
         })()
     },[gameId])
@@ -36,4 +36,9 @@ const [game, setGame]=useState({})
         setGame,
     ]
 
+}
+
+export function useCreateGame(){
+    const gameCreateHandler = (gameData)=> gamesAPI.create(gameData)
+    return gameCreateHandler
 }
