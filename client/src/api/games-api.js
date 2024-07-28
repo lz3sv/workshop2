@@ -10,12 +10,9 @@ export const getAll = async () => {
 
 export const getOne= (gameId) => requester.get(`${BASE_URL}/${gameId}`)
 
-export const create= async (gameData) => {
-    //console.log("from games-api")
-    //console.log(gameData)
-    await requester.post(`${BASE_URL}`,gameData)
+export const create= (gameData) => requester.post(`${BASE_URL}`,gameData)
     
-}
+
 
 const gamesAPI={
     getAll,
