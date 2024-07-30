@@ -1,4 +1,4 @@
-import { useState } from 'react'
+
 import { Routes, Route } from 'react-router-dom'
 
 import Header from './components/header/Header'
@@ -8,7 +8,7 @@ import Register from './components/register/Register'
 import Catalog from './components/catalog/Catalog'
 import Create from './components/create/Create'
 import Details from './components/details/Details'
-import { AuthContext } from './context/AuthContext'
+import { AuthContextProvider } from './context/AuthContext'
 
 
 
@@ -17,23 +17,13 @@ import { AuthContext } from './context/AuthContext'
 
 
 function App() {
-  const [authState, setAuthState] = useState({})
+  
 
-  const changeAuthState=(state)=> {
-    //to do quick solution
-    localStorage.setItem('accessToken', state.accessToken)
-    setAuthState(state)
-  }
 
-  const contextData={
-    email: authState.email,
-    userId: authState._id,
-    accessToken: authState.accessToken,
-    isAuthenticated: !!authState.email,
-    changeAuthState,
-  }
+
+
   return (
-    <AuthContext.Provider value={contextData}>
+    <AuthContextProvider>
       <div id="box">
         <Header />
         <main id="main-content">
@@ -47,7 +37,7 @@ function App() {
           </Routes>
         </main>
       </div>
-    </AuthContext.Provider>
+    </AuthContextProvider>
   )
 }
 
