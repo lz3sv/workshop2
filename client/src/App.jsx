@@ -9,6 +9,7 @@ import Catalog from './components/catalog/Catalog'
 import Create from './components/create/Create'
 import Details from './components/details/Details'
 import { AuthContextProvider } from './context/AuthContext'
+import Logout from './components/logout/Logout'
 
 
 
@@ -34,6 +35,7 @@ function App() {
             <Route path='/catalog' element={<Catalog />} />
             <Route path='/catalog/:gameId/details' element={<Details />} />
             <Route path='/create' element={<Create />} />
+            <Route path='/logout' element={<Logout />} />
           </Routes>
         </main>
       </div>
