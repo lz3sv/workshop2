@@ -14,6 +14,7 @@ export default function Details(){
     const { gameId }=useParams()
     const [comments, dispatch]=useGetAllComments(gameId)
     const createComment=useCreateComments()
+    const {email}=useAuthContext()
     const [game]=useGetOneGames(gameId)
     const{isAuthenticated}= useAuthContext()
     const {userId}=useAuthContext()
@@ -25,7 +26,7 @@ export default function Details(){
         try{
             const newComment=await createComment(gameId, comment)
             //setComments(oldComments => [...oldComments, newComment])
-            dispatch({type: 'ADD_COMMENT', payload: newComment})
+            dispatch({type: 'ADD_COMMENT', payload: {...newComment, author: {email} }})
         }catch (err){
            console.log(err.message) 
         }
