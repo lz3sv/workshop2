@@ -12,7 +12,7 @@ const initialValues={
 
 export default function Details(){
     const { gameId }=useParams()
-    const [comments, setComments]=useGetAllComments(gameId)
+    const [comments, dispatch]=useGetAllComments(gameId)
     const createComment=useCreateComments()
     const [game]=useGetOneGames(gameId)
     const{isAuthenticated}= useAuthContext()
@@ -24,11 +24,12 @@ export default function Details(){
     }=useForm(initialValues, async ({comment})=>{
         try{
             const newComment=await createComment(gameId, comment)
-            setComments(oldComments => [...oldComments, newComment])
+            //setComments(oldComments => [...oldComments, newComment])
+            dispatch({type: 'ADD_COMMENT', payload: newComment})
         }catch (err){
            console.log(err.message) 
         }
-    
+
         })
 
     

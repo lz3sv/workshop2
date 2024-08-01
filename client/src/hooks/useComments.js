@@ -1,26 +1,40 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useReducer } from 'react'
 import commentsAPI from '../api/comments-api'
 
-export function useCreateComments(){
-    const createHandler=(gameId, comment)=> commentsAPI.create(gameId,comment)
-    
+export function useCreateComments() {
+    const createHandler = (gameId, comment) => commentsAPI.create(gameId, comment)
+
 
     return createHandler
 }
 
+function commentReducer(state, action) {
+    switch (action.type) {
+        case 'GET_ALL':
+            //console.log(action)
+            return action.payload.slice()
+        case 'ADD_COMMENT':
+            //console.log(action)
+            return [...state, action.payload]
+        default:
+            return state
+    }
 
-export function useGetAllComments(gameId){
-    const [comments, setComments]=useState([])
+}
+
+
+export function useGetAllComments(gameId) {
+    const [comments, dispatch] = useReducer(commentReducer, [])
     //console.log('Wlizam za komentari!!!!!!')
-    useEffect(()=>{
-        (async ()=>{
+    useEffect(() => {
+        (async () => {
             //console.log('MINAWAM, DE!!!!!!')
-            const result=await commentsAPI.getAll(gameId)
+            const result = await commentsAPI.getAll(gameId)
             //console.log(result)
-            setComments(result)
+            dispatch({ type: 'GET_ALL', payload: result })
         })()
-    },[gameId])
+    }, [gameId])
 
-    return [comments, setComments]
+    return [comments, dispatch]
 
 }
