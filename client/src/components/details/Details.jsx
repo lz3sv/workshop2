@@ -21,9 +21,15 @@ export default function Details(){
         changeHandler,
         submitHandler,
         values,
-    }=useForm(initialValues,({comment})=>{
-        createComment(gameId, comment)
-    })
+    }=useForm(initialValues, async ({comment})=>{
+        try{
+            const newComment=await createComment(gameId, comment)
+            setComments(oldComments => [...oldComments, newComment])
+        }catch (err){
+           console.log(err.message) 
+        }
+    
+        })
 
     
     return (
