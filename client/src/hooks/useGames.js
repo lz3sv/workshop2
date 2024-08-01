@@ -22,11 +22,10 @@ export function useGetAllGames(){
 
 export function useGetOneGames(gameId){
 const [game, setGame]=useState({})
-
     useEffect(()=>{
         (async ()=>{
             const result= await gamesAPI.getOne(gameId)
-            //console.log(game.comments)
+            //console.log(result)
             setGame(result)
         })()
     },[gameId])
