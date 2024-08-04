@@ -29,7 +29,8 @@ const [game, setGame]=useState({})
             setGame(result)
         })()
     },[gameId])
-
+    // console.log('from games-api')
+    // console.log(game)
     return [
         game, 
         setGame,
@@ -41,3 +42,5 @@ export function useCreateGame(){
     const gameCreateHandler = (gameData)=> gamesAPI.create(gameData)
     return gameCreateHandler
 }
+
+

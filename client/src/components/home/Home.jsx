@@ -6,8 +6,10 @@ export default function Home(){
     const [latestGames, setLatestGames]=useState([])
     useEffect(()=>{
         (async ()=>{
-            const result= await gamesAPI.getAll()
-            //console.log("result => "+result)
+
+            const response= await gamesAPI.getAll()
+            const result =Object.values(response)
+            console.log(result)
             const resulta=result.reverse().slice(0,3)
             setLatestGames(resulta)
             console.log(resulta.length)
